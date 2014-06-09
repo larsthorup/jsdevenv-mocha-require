@@ -13,13 +13,17 @@ module.exports = function (config) {
             'src/js/**/*.js': ['coverage']
         },
         reporters: ['progress', 'junit', 'coverage'],
+        junitReporter: {
+            outputFile: 'output/test/test-results.xml'
+        },
         coverageReporter: {
             reporters: [
                 {type: 'lcov'},
                 {type: 'html'},
                 {type: 'cobertura'},
                 {type: 'text-summary'}
-            ]
+            ],
+            dir: 'output/coverage'
         },
         port: 9876, // Note: web server port
         colors: true, // Note: enable / disable colors in the output (reporters and logs)
