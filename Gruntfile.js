@@ -35,10 +35,32 @@ module.exports = function (grunt) {
     gruntConfig.karma = {
         cover: {
             configFile: 'karma.conf.js',
+            preprocessors: {
+                'src/js/**/*.js': ['coverage']
+            },
+            reporters: ['progress', 'junit', 'coverage'],
+            browser: ['PhantomJS'],
             singleRun: true
+        },
+        server: {
+            configFile: 'karma.conf.js',
+            reporters: ['progress'],
+            browsers: ['Firefox'],
+            background: true
         }
     };
     grunt.registerTask('cover', ['karma:cover']);
+
+
+    // tdd
+    grunt.loadNpmTasks('grunt-contrib-watch');
+    gruntConfig.watch = {
+        karma: {
+            files: ['src/**/*.js' ],
+            tasks: ['karma:server:run']
+        }
+    };
+    grunt.registerTask('tdd', ['karma:server:start', 'watch:karma']);
 
 
     // grunt

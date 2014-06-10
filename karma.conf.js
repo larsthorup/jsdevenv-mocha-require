@@ -29,7 +29,7 @@ module.exports = function (config) {
         colors: true, // Note: enable / disable colors in the output (reporters and logs)
         logLevel: config.LOG_INFO,
         autoWatch: false,
-        browsers: ['PhantomJS'],
+        browsers: ['Firefox'], // PhantomJS
         captureTimeout: 60000, // Note: If browser does not capture in given timeout [ms], kill it
         singleRun: false
     });
