@@ -9,6 +9,10 @@ define(['jquery'], function ($) {
         }, 900);
     }
 
+    function style() {
+        $('<style>p {color: blue}</style>').appendTo($('head'));
+    }
+
     function fetch(query) {
         if(false) {
             return {
@@ -40,6 +44,7 @@ define(['jquery'], function ($) {
 
     var weather = {
         render: render,
+        style: style,
         fetch: fetch,
         listen: listen
     };

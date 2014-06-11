@@ -1,23 +1,25 @@
 /*global define, describe, beforeEach, afterEach, it*/
 define(function(require) {
     'use strict';
-    var chai = require('chai');
+    var expect = require('chai').expect;
     var sinon = require('sinon');
     var $ = require('jquery');
     var weather = require('page/weather');
     require('mockjax');
-    var expect = chai.expect;
 
     describe('weather', function () {
         var sandbox;
+        var fixture;
 
         beforeEach(function () {
             sandbox = sinon.sandbox.create({useFakeTimers: true});
+            fixture = $('<div id="fixture"></div>').appendTo('body');
         });
 
         afterEach(function () {
             $.mockjaxClear();
             sandbox.restore();
+            fixture.remove();
         });
 
         it('renders', function () {
@@ -39,6 +41,20 @@ define(function(require) {
 
             // then
             expect(p.hasClass('blink')).to.equal(true);
+        });
+
+        it('styles', function () {
+            // given
+            var context = $('<div></div>').appendTo(fixture); // Note: need to be in the DOM for styles to apply
+            var weatherData = { text: 'rain' };
+            weather.render(context, weatherData);
+
+            // when
+            weather.style(context);
+
+            // then
+            var p = context.find('p');
+            expect(p.css('color')).to.equal('rgb(0, 0, 255)');
         });
 
         it('fetches', function (done) {
