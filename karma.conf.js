@@ -10,10 +10,6 @@ module.exports = function (config) {
         ],
         exclude: [
         ],
-        preprocessors: {
-            'src/js/**/*.js': ['coverage']
-        },
-        reporters: ['progress', 'junit', 'coverage'],
         junitReporter: {
             outputFile: 'output/test/test-results.xml'
         },
@@ -30,7 +26,6 @@ module.exports = function (config) {
         colors: true, // Note: enable / disable colors in the output (reporters and logs)
         logLevel: config.LOG_INFO,
         autoWatch: false,
-        browsers: ['Firefox'], // PhantomJS
         captureTimeout: 60000, // Note: If browser does not capture in given timeout [ms], kill it
         singleRun: false
     });

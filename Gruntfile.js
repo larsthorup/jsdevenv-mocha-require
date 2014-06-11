@@ -33,12 +33,18 @@ module.exports = function (grunt) {
     // coverage
     grunt.loadNpmTasks('grunt-karma');
     gruntConfig.karma = {
+        test: {
+            configFile: 'karma.conf.js',
+            reporters: ['progress', 'junit'],
+            browsers: ['PhantomJS'],
+            singleRun: true
+        },
         cover: {
             configFile: 'karma.conf.js',
             preprocessors: {
                 'src/js/**/*.js': ['coverage']
             },
-            reporters: ['progress', 'junit', 'coverage'],
+            reporters: ['progress', 'coverage'],
             browsers: ['PhantomJS'],
             singleRun: true
         },
@@ -49,10 +55,11 @@ module.exports = function (grunt) {
             background: true
         }
     };
+    grunt.registerTask('test', ['karma:test']);
     grunt.registerTask('cover', ['karma:cover']);
 
 
-    // tdd
+    // forever
     grunt.loadNpmTasks('grunt-contrib-watch');
     gruntConfig.watch = {
         karma: {
@@ -60,7 +67,7 @@ module.exports = function (grunt) {
             tasks: ['karma:server:run']
         }
     };
-    grunt.registerTask('tdd', ['karma:server:start', 'watch:karma']);
+    grunt.registerTask('karma:forever', ['karma:server:start', 'watch:karma']);
 
 
     // grunt
