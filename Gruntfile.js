@@ -39,7 +39,7 @@ module.exports = function (grunt) {
                 'src/js/**/*.js': ['coverage']
             },
             reporters: ['progress', 'junit', 'coverage'],
-            browser: ['PhantomJS'],
+            browsers: ['PhantomJS'],
             singleRun: true
         },
         server: {
