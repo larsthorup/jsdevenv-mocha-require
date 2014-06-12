@@ -14,13 +14,13 @@ define(['jquery'], function ($) {
     }
 
     function fetch(query) {
-        if(false) {
-            return {
-                then: function (callback) {
-                    callback({text: 'sunny'});
-                }
-            };
-        }
+//        if(false) {
+//            return {
+//                then: function (callback) {
+//                    callback({text: 'sunny'});
+//                }
+//            };
+//        }
 
         return $.ajax({
             url: 'http://api.openweathermap.org/data/2.5/weather',
