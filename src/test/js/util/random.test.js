@@ -1,5 +1,5 @@
 /*global define, describe, beforeEach, afterEach, it*/
-define(['sinon', 'chai', 'util/random'], function (sinon, chai) {
+define(['sinon', 'chai', 'js/util/random'], function (sinon, chai) {
     'use strict';
     var expect = chai.expect;
 

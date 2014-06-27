@@ -1,7 +1,10 @@
 /*global require*/
 require.config({
+    baseUrl: '', // Note: all paths relative to src folder
     paths: {
-        jquery: '../lib/jquery-2.1.1'
+        jquery: 'lib/jquery/dist/jquery',
+        css: 'lib/require-css/css',
+        text: 'lib/requirejs-text/text'
     },
     shim: {
         jquery : { exports: '$'}

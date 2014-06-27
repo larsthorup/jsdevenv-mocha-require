@@ -8,12 +8,12 @@ for (var file in window.__karma__.files) {
     }
 }
 
-require(['/base/src/js/requireConfig.js'], function () {
+require(['/base/src/js/require.conf.js'], function () {
     'use strict';
-    require(['/base/src/test/js/requireConfig.js'], function () {
+    require(['/base/src/test/js/require.conf.js'], function () {
         require.config({
             // Karma serves files from '/base'
-            baseUrl: '/base/src/js',
+            baseUrl: '/base/src',
 
             // ask Require.js to load these files (all our tests)
             deps: tests,

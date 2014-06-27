@@ -4,7 +4,7 @@ define(function(require) {
     var expect = require('chai').expect;
     var sinon = require('sinon');
     var $ = require('jquery');
-    var weather = require('page/weather');
+    var weather = require('js/page/weather');
     require('mockjax');
 
     describe('weather', function () {
