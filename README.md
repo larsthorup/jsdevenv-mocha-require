@@ -9,5 +9,5 @@ JavaScript project with Mocha and RequireJS
     grunt lint
     grunt test
     grunt cover
-    grunt tdd
+    grunt karma:forever
     open src/index.html

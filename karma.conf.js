@@ -4,9 +4,7 @@ module.exports = function (config) {
         frameworks: ['mocha', 'requirejs'],
         files: [
             'src/test/karma-test-main.js',
-            {pattern: 'src/lib/**/*.js', included: false},
-            {pattern: 'src/js/**/*.js', included: false},
-            {pattern: 'src/test/**/*.js', included: false}
+            {pattern: 'src/**/*.*', included: false}
         ],
         exclude: [
         ],
