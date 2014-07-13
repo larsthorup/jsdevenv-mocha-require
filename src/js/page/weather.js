@@ -1,6 +1,7 @@
 /*global define, window*/
-define(['jquery'], function ($) {
+define(function(require) {
     'use strict';
+    var $ = require('jquery');
 
     function render(context, data) {
         var p = $('<p></p>').appendTo(context).text(data.text);

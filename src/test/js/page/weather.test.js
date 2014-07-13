@@ -3,6 +3,7 @@ define(function(require) {
     'use strict';
     var expect = require('chai').expect;
     var sinon = require('sinon');
+    var multiline = require('multiline');
     var $ = require('jquery');
     var weather = require('js/page/weather');
     require('mockjax');
@@ -85,7 +86,11 @@ define(function(require) {
 
         it('listens', function () {
             // given
-            var context = $('<div><input type="text" id="city" /></div>');
+            var context = $(multiline(function () {/*
+                <div>
+                    <input type="text" id="city" />
+                </div>
+            */}));
             var city = context.find('#city');
             sandbox.stub(weather, 'fetch').returns({
                 then: function(callback) {

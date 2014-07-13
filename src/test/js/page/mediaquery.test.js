@@ -1,7 +1,9 @@
 /*global define, describe, beforeEach, afterEach, it*/
-define(['chai', 'jquery'], function (chai, $) {
+define(function (require) {
     'use strict';
-    var expect = chai.expect;
+    var expect = require('chai').expect;
+    var $ = require('jquery');
+    var multiline = require('multiline');
 
     describe('media query', function () {
         var fixture;
@@ -12,8 +14,16 @@ define(['chai', 'jquery'], function (chai, $) {
             fixture = $('<div id="fixture"></div>').appendTo('body');
             iframe = $('<iframe></iframe>').appendTo(fixture); // Note: need to be in the DOM for styles to apply
             context = $(iframe.get(0).contentDocument);
-            $('<style>@media(max-width: 600px) { h1 { color: red; } }</style>').appendTo(context.find('head'));
-            $('<style>@media(min-width: 601px) { h1 { color: blue; } }</style>').appendTo(context.find('head'));
+            $(multiline(function () {/*
+                <style>
+                    @media(max-width: 600px) {
+                        h1 { color: red; }
+                    }
+                    @media(min-width: 601px) {
+                        h1 { color: blue; }
+                    }
+                </style>
+            */})).appendTo(context.find('head'));
             $('<h1>Hello world</h1>').appendTo(context.find('body'));
         });
 
