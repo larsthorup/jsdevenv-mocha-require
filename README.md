@@ -3,6 +3,7 @@ jsdevenv-mocha-require
 
 JavaScript project with Mocha and RequireJS
 
+    npm install bower -g
     npm install grunt-cli -g
     npm install
     bower install
