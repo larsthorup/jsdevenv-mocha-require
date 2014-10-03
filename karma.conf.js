@@ -1,5 +1,23 @@
 module.exports = function (config) {
     config.set({
+        browserStack: {
+        },
+        customLaunchers: {
+            bs_win8_firefox: {
+                base: 'BrowserStack',
+                os: 'Windows',
+                device: null,
+                browser_version: '31.0',
+                browser: 'firefox',
+                os_version: '8.1'
+            },
+            bs_iphone5: {
+                base: 'BrowserStack',
+                device: 'iPhone 5',
+                os: 'ios',
+                os_version: '6.0'
+            }
+        },
         basePath: '',
         frameworks: ['mocha', 'requirejs'],
         files: [

@@ -53,6 +53,12 @@ module.exports = function (grunt) {
             reporters: ['progress'],
             browsers: ['Firefox'],
             background: true
+        },
+        browserstack: {
+            configFile: 'karma.conf.js',
+            reporters: ['spec'],
+            browsers: ['bs_win8_firefox'],
+            singleRun: true
         }
     };
     grunt.registerTask('test', ['karma:test']);
