@@ -1,7 +1,8 @@
 /*global define, describe, it*/
-define(['chai', 'util/time-orig'], function (chai, time) {
+define(function (require) {
     'use strict';
-    var expect = chai.expect;
+    var expect = require('chai').expect;
+    var time = require('util/time-orig');
 
     describe('util.time', function () {
 

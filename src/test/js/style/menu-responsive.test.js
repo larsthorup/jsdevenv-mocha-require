@@ -1,7 +1,10 @@
 /*global define, describe, beforeEach, afterEach, it*/
-define(['chai', 'jquery', 'text!style/menu.css'], function (chai, $, menuCss) {
+define(function (require) {
     'use strict';
-    var expect = chai.expect;
+    var $ = require('jquery');
+    var multiline = require('multiline');
+    var menuCss = require('text!style/menu.css');
+    var expect = require('chai').expect;
 
     describe('menu responsive', function () {
         var fixture;
@@ -14,7 +17,12 @@ define(['chai', 'jquery', 'text!style/menu.css'], function (chai, $, menuCss) {
             iframe = $('<iframe></iframe>').appendTo(fixture); // Note: need to be in the DOM for styles to apply
             context = $(iframe.get(0).contentDocument);
             $('<style></style>').text(menuCss).appendTo(context.find('head'));
-            var menu = $('<ul class="menu"><li>Item 1</li><li>Item 2</li></ul>').appendTo(context.find('body'));
+            var menu = $(multiline(function () {/*
+                <ul class="menu">
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                </ul>
+            */})).appendTo(context.find('body'));
             items = menu.find('li');
         });
 
