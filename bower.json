@@ -20,6 +20,6 @@
     "requirejs-text": "~2.0.12"
   },
   "devDependencies": {
-    "multiline": "~0.3.4"
+    "multiline": "^1.0.1"
   }
 }
