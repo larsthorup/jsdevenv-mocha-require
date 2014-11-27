@@ -7,11 +7,21 @@ jsdevenv-mocha-require
 
 JavaScript project with Mocha and RequireJS
 
+    npm install bower -g
     npm install grunt-cli -g
+    
     npm install
     bower install
+    
     grunt lint
+    
     grunt test
+    
     grunt cover
+    
     grunt karma:forever
+    
     open src/index.html
+    
+    BROWSER_STACK_USERNAME={your-email} BROWSER_STACK_ACCESS_KEY={your-access-key} grunt karma:browserstack
+    
