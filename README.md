@@ -27,5 +27,5 @@ JavaScript project with Mocha and RequireJS
     
     BROWSER_STACK_USERNAME={your-email}
     BROWSER_STACK_ACCESS_KEY={your-access-key}
-    grunt karma:chrome_win8
+    grunt karma:chromeWin8
     

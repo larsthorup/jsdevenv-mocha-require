@@ -33,14 +33,50 @@ module.exports = function (grunt) {
     // coverage
     grunt.loadNpmTasks('grunt-karma');
     gruntConfig.karma = {
+        options: {
+            basePath: '',
+            frameworks: ['mocha', 'requirejs'],
+            files: [
+                'src/test/karma-test-main.js',
+                {pattern: 'src/**/*.*', included: false}
+            ],
+            junitReporter: {
+                outputFile: 'output/test/test-results.xml'
+            },
+            coverageReporter: {
+                reporters: [
+                    {type: 'lcov'},
+                    {type: 'html'},
+                    {type: 'cobertura'},
+                    {type: 'text-summary'}
+                ],
+                dir: 'output/coverage'
+            },
+            port: 9876, // Note: web server port
+            colors: true, // Note: enable / disable colors in the output (reporters and logs)
+            logLevel: 'INFO',
+            autoWatch: false,
+            captureTimeout: 60000, // Note: If browser does not capture in given timeout [ms], kill it
+            singleRun: false,
+            browserStack: {
+            },
+            customLaunchers: {
+                'bs_win8_chrome': {
+                    base: 'BrowserStack',
+                    os: 'Windows',
+                    device: null,
+                    'browser_version': '39',
+                    browser: 'chrome',
+                    'os_version': '8.1'
+                }
+            }
+        },
         test: {
-            configFile: 'karma.conf.js',
             reporters: ['progress', 'junit'],
             browsers: ['PhantomJS'],
             singleRun: true
         },
         cover: {
-            configFile: 'karma.conf.js',
             preprocessors: {
                 'src/js/**/*.js': ['coverage']
             },
@@ -49,19 +85,16 @@ module.exports = function (grunt) {
             singleRun: true
         },
         server: {
-            configFile: 'karma.conf.js',
             reporters: ['progress'],
             browsers: ['Firefox'],
             background: true
         },
         firefox: {
-            configFile: 'karma.conf.js',
             reporters: ['progress'],
             browsers: ['Firefox'],
             singleRun: true
         },
-        chrome_win8: {
-            configFile: 'karma.conf.js',
+        chromeWin8: {
             reporters: ['spec'],
             browsers: ['bs_win8_chrome'],
             singleRun: true
