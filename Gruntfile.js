@@ -54,10 +54,16 @@ module.exports = function (grunt) {
             browsers: ['Firefox'],
             background: true
         },
-        browserstack: {
+        firefox: {
+            configFile: 'karma.conf.js',
+            reporters: ['progress'],
+            browsers: ['Firefox'],
+            singleRun: true
+        },
+        chrome_win8: {
             configFile: 'karma.conf.js',
             reporters: ['spec'],
-            browsers: ['bs_win8_firefox'],
+            browsers: ['bs_win8_chrome'],
             singleRun: true
         }
     };
@@ -73,7 +79,7 @@ module.exports = function (grunt) {
             tasks: ['karma:server:run']
         }
     };
-    grunt.registerTask('karma:forever', ['karma:server:start', 'watch:karma']);
+    grunt.registerTask('live', ['karma:server:start', 'watch:karma']);
 
 
     // grunt

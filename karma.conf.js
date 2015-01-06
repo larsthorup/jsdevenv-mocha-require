@@ -3,19 +3,13 @@ module.exports = function (config) {
         browserStack: {
         },
         customLaunchers: {
-            bs_win8_firefox: {
+            bs_win8_chrome: {
                 base: 'BrowserStack',
                 os: 'Windows',
                 device: null,
-                browser_version: '31.0',
-                browser: 'firefox',
+                browser_version: '39',
+                browser: 'chrome',
                 os_version: '8.1'
-            },
-            bs_iphone5: {
-                base: 'BrowserStack',
-                device: 'iPhone 5',
-                os: 'ios',
-                os_version: '6.0'
             }
         },
         basePath: '',

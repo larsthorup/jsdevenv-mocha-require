@@ -18,10 +18,14 @@ JavaScript project with Mocha and RequireJS
     grunt test
     
     grunt cover
-    
-    grunt karma:forever
+
+    grunt karma:firefox
+
+    grunt live
     
     open src/index.html
     
-    BROWSER_STACK_USERNAME={your-email} BROWSER_STACK_ACCESS_KEY={your-access-key} grunt karma:browserstack
+    BROWSER_STACK_USERNAME={your-email}
+    BROWSER_STACK_ACCESS_KEY={your-access-key}
+    grunt karma:chrome_win8
     
