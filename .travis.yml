@@ -3,9 +3,6 @@ node_js:
 - 0.1
 before_install: npm install -g grunt-cli
 env:
-  global: # for browserstack
-  - secure: Q3cEgELVYS7phyhg2UzY6CEajZ5LS8UDq4nWcUGfHB6Wx3ycC8JjhCjd3XwZG8HR/PThD2EsJJsWQpL/vbxY4txSE4PHDQZ73BG/13E8yogPwFHUEJ7arlA2USyhT/uTpbHB
-  - secure: RHbhQb3eZAT5HqqVCJYd35IyMLGEcBi2gWLu8jHQInHl2IYbin1s5UPzsVMkliW0gO1kOEXbKKWumR5n8dmljWqvSTaG9c8pkPlGvFaLYjREOoY2eT5FcxE3aJrFN9SEG0/H5cnHOUrFVTQXi/Qio+cl9XO84DJnDoRV+d5cBi4=/6zWUFiDt9hwiAWn1c3QglJI0rhNTNISDxR3tew=
+  global: # browserstack credentials
+    - secure: cQnGYnzb1917n3fmt0wg/Ip2TUwWuSxBhiOE/aU11vwJ6IkV1Y313I82SyGG22Z/9Mq0iNfUrejInk4wjgagpxsqwcKqVl73aZTaIP9vi7oqfQLuQ+pFmQw7z2hJhMMvGfus9CtdlE/74bfzaTLTEB0KIqTWtqYh+wzIgW+vrBI=
 script: npm run travis
-
-
