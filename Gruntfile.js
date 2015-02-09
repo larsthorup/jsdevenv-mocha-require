@@ -11,7 +11,7 @@ module.exports = function (grunt) {
     grunt.registerTask('all', ['lint', 'cover']);
 
     // continuous integration
-    grunt.registerTask('ci', ['lint', 'cover']);
+    grunt.registerTask('ci', ['lint', 'cover', 'karma:chromeWin8']);
 
     // lint
     grunt.loadNpmTasks('grunt-contrib-jshint');
