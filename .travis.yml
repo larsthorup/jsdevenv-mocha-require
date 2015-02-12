@@ -3,7 +3,7 @@ node_js:
 - 0.1
 before_install: npm install -g grunt-cli
 env:
-  global: # saucelabs credentials
-  - secure: KNdXvvIF7Q3Ef9SwX0V248aNJEnDw7nY07rUz8rUjnUI4f2FhHJlXUvsw6hHpQIWjKcAkuQtx3z62kLnn7Tp5TONzmszo5/tB6cd4p0W5+W3djM+0A2H/bjE1Fjz+gHQSf2S0NNiRhKStlSG/SqEy4c9HPr8tJ+lCaTpi21lC6g=
+  global:
+  - secure: cRC1JK2wuI6oBMfdP9dhofe44W64GEYiCr8idbjmAjmDWTGphbQcXVAKCVthtyc5cO2rrXGwuVt77o6KbK1ml6Zkog8yhcmpa8PBnsAXWgEITeTDZ3H0kYwVvaRc8CTuO2ua2mywn7hbJiRTryEW1SNlXPS/iOmmFMQjtyvKpfo=
 script: npm run travis
 
