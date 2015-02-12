@@ -3,6 +3,7 @@ node_js:
 - 0.1
 before_install: npm install -g grunt-cli
 env:
-  global: # browserstack credentials
-    - secure: cQnGYnzb1917n3fmt0wg/Ip2TUwWuSxBhiOE/aU11vwJ6IkV1Y313I82SyGG22Z/9Mq0iNfUrejInk4wjgagpxsqwcKqVl73aZTaIP9vi7oqfQLuQ+pFmQw7z2hJhMMvGfus9CtdlE/74bfzaTLTEB0KIqTWtqYh+wzIgW+vrBI=
+  global: # saucelabs credentials
+  - secure: KNdXvvIF7Q3Ef9SwX0V248aNJEnDw7nY07rUz8rUjnUI4f2FhHJlXUvsw6hHpQIWjKcAkuQtx3z62kLnn7Tp5TONzmszo5/tB6cd4p0W5+W3djM+0A2H/bjE1Fjz+gHQSf2S0NNiRhKStlSG/SqEy4c9HPr8tJ+lCaTpi21lC6g=
 script: npm run travis
+

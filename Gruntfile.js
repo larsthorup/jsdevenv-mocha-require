@@ -11,7 +11,7 @@ module.exports = function (grunt) {
     grunt.registerTask('all', ['lint', 'cover']);
 
     // continuous integration
-    grunt.registerTask('ci', ['lint', 'cover', 'karma:chromeWin8']);
+    grunt.registerTask('ci', ['lint', 'cover', 'karma:chromeWin7']);
 
     // lint
     grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -60,6 +60,8 @@ module.exports = function (grunt) {
             singleRun: false,
             browserStack: {
             },
+            sauceLabs: {
+            },
             customLaunchers: {
                 'bs_win8_chrome': {
                     base: 'BrowserStack',
@@ -68,6 +70,12 @@ module.exports = function (grunt) {
                     'browser_version': '39',
                     browser: 'chrome',
                     'os_version': '8.1'
+                },
+                'sl_win7_chrome': {
+                    base: 'SauceLabs',
+                    browserName: 'chrome',
+                    platform: 'Windows 7',
+                    version: '39'
                 }
             }
         },
@@ -97,6 +105,11 @@ module.exports = function (grunt) {
         chromeWin8: {
             reporters: ['spec'],
             browsers: ['bs_win8_chrome'],
+            singleRun: true
+        },
+        chromeWin7: {
+            reporters: ['spec', 'saucelabs'],
+            browsers: ['sl_win7_chrome'],
             singleRun: true
         }
     };
