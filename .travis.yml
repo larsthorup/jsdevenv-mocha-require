@@ -6,4 +6,3 @@ env:
   global:
   - secure: cRC1JK2wuI6oBMfdP9dhofe44W64GEYiCr8idbjmAjmDWTGphbQcXVAKCVthtyc5cO2rrXGwuVt77o6KbK1ml6Zkog8yhcmpa8PBnsAXWgEITeTDZ3H0kYwVvaRc8CTuO2ua2mywn7hbJiRTryEW1SNlXPS/iOmmFMQjtyvKpfo=
 script: npm run travis
-
