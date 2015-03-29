@@ -11,7 +11,7 @@ module.exports = function (grunt) {
     grunt.registerTask('all', ['lint', 'cover']);
 
     // continuous integration
-    grunt.registerTask('ci', ['lint', 'cover', 'karma:chromeWin7']);
+    grunt.registerTask('ci', ['lint', 'cover']);
 
     // lint
     grunt.loadNpmTasks('grunt-contrib-jshint');
@@ -75,7 +75,7 @@ module.exports = function (grunt) {
                     base: 'SauceLabs',
                     browserName: 'chrome',
                     platform: 'Windows 7',
-                    version: '39'
+                    version: '' // Note: latest
                 }
             }
         },
