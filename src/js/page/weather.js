@@ -2,16 +2,18 @@
 define(function(require) {
     'use strict';
     var $ = require('jquery');
+    var css = require('text!style/weather.css');
+    var template = require('text!template/weather-forecast.html');
 
     function render(context, data) {
-        var p = $('<p></p>').appendTo(context).text(data.text);
+        var p = $(template).appendTo(context).text(data.text);
         window.setTimeout(function () {
             p.addClass('blink');
         }, 900);
     }
 
     function style() {
-        $('<style>p {color: blue}</style>').appendTo($('head'));
+        $('<style>' + css + '</style>').appendTo($('head'));
     }
 
     function fetch(query) {
@@ -39,6 +41,7 @@ define(function(require) {
             var city = $(this);
             weather.fetch(city.val()).then(function (data) {
                 weather.render(context, data);
+                weather.style(context);
             });
         });
     }
