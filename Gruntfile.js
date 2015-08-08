@@ -41,7 +41,7 @@ module.exports = function (grunt) {
                 {pattern: 'src/**/*.*', included: false}
             ],
             junitReporter: {
-                outputFile: 'output/test/test-results.xml'
+                outputDir: 'output/test'
             },
             coverageReporter: {
                 reporters: [
