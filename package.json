@@ -24,12 +24,17 @@
     "karma-phantomjs-launcher": "^0.2.1",
     "karma-requirejs": "^0.2.2",
     "karma-sauce-launcher": "^0.2.14",
-    "karma-spec-reporter": "^0.0.20"
+    "karma-spec-reporter": "^0.0.20",
+    "mocha": "^2.3.3",
+    "phantomjs": "^1.9.18"
   },
   "scripts": {
     "postinstall": "node node_modules/bower/bin/bower install",
     "coveralls": "cat ./output/coverage/*/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "travis": "grunt ci && npm run coveralls",
     "test": "grunt ci"
+  },
+  "dependencies": {
+    "requirejs": "^2.1.20"
   }
 }
